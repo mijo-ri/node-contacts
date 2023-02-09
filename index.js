@@ -1,20 +1,17 @@
-const dotenv = require('dotenv');
-const express = require('express');
+import dotenv from 'dotenv';
+import express from 'express';
+import contacts from './data/contacts.js';
 
 dotenv.config();
 
 const PORT = process.env.PORT;
 const app = express();
 
+
 /**
  * Middleware
  */
 app.use(express.json());
-
-/**
- * Data
- */
-const contacts = require('./data/contacts');
 
 
 /**
