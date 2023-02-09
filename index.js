@@ -1,9 +1,18 @@
 const express = require('express');
 const app = express();
 const PORT = 1337;
-const contacts = require('./data/contacts');
 
 app.use(express.json());
+
+/**
+ * Data
+ */
+const contacts = require('./data/contacts');
+
+
+/**
+ * Endpoints
+ */
 
 // get contacts
 app.get('/contacts', (req, res) => {
@@ -26,6 +35,10 @@ app.get('/contacts/:id', (req, res) => {
     res.status(200).send(contact);
 });
 
+
+/**
+ * Start server
+ */
 app.listen(
     PORT,
     () => console.log(`server is running on: http://localhost:${PORT}`)
