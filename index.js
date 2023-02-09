@@ -1,7 +1,13 @@
+const dotenv = require('dotenv');
 const express = require('express');
-const app = express();
-const PORT = 1337;
 
+dotenv.config();
+
+const app = express();
+
+/**
+ * Middleware
+ */
 app.use(express.json());
 
 /**
@@ -40,6 +46,6 @@ app.get('/contacts/:id', (req, res) => {
  * Start server
  */
 app.listen(
-    PORT,
-    () => console.log(`server is running on: http://localhost:${PORT}`)
+    process.env.PORT,
+    () => console.log(`server is running on: http://localhost:${process.env.PORT}`)
 );

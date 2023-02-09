@@ -21,4 +21,5 @@ npm run server
 
 # Packages
 
+- dotenv: Environment Variablen
 - nodemon: Startet den Server neu, wenn eine JavaScript Datei geändert wird.
