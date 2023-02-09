@@ -3,6 +3,7 @@ const express = require('express');
 
 dotenv.config();
 
+const PORT = process.env.PORT;
 const app = express();
 
 /**
@@ -46,6 +47,6 @@ app.get('/contacts/:id', (req, res) => {
  * Start server
  */
 app.listen(
-    process.env.PORT,
-    () => console.log(`server is running on: http://localhost:${process.env.PORT}`)
+    PORT,
+    () => console.log(`Server is running in ${process.env.NODE_ENV} mode on: http://localhost:${PORT}`)
 );
